@@ -1,0 +1,17 @@
+/* Use of 'media queries' to define layouts according to specific screen resolutions: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries#targeting_media_features'. */
+@media (width > 0px) {                              /* Base design, as starting point: e.g. for desktop, although recommended to start with mobile, 1st: 'https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile/20350990#20350990'. */
+
+    /* CUSTOM CLASSES. */
+    
+    /* Loading splashscreen: 'modal' dialog; i.e. dialog that locks user interactivity. */
+    #dialog_loading {
+        margin: auto;                               /* If setting 'margin: 0;' in all html elements; i.e. in CSS '* { margin: 0; }', restores default margin so it's centered: 'https://stackoverflow.com/questions/73925255/how-can-the-html-dialog-element-be-positioned-according-to-normal-flow-when-op/77652902#77652902'. */
+        color: #CCDAD1;                           /* If setting a 'dark theme' for the body; i.e. in CSS 'body { background-color: var(--colors_background); color: var(--colors_01); }', to match theme. 'dialog' elements do not inherit properties from 'html' and child elements, like 'body'. */
+        outline: none;
+        border: none;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(0 0 0 / 0.85);    /* Make a box semi-transparent: 'https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_CSS_problems/Make_box_transparent'.*/
+    }
+
+}

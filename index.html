@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Semantic tags: 'https://www.semrush.com/blog/semantic-html5-guide/', 'https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantic_elements'. -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Window title. -->
+        <title>Antigravity</title>
+        <!-- Window logo. -->
+        <link rel="icon" type="image/png" href="/rsrcs/media/icon-favicon.png" />
+        <!--
+        External CSS stylesheet: 'https://www.w3schools.com/html/html_css.asp', 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link'.
+        - In this case, PyScript CSS.
+        -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" />
+        <!-- External (local) CSS stylesheet, with multiple external CSS links. ORDER MATTERS! 'https://www.programminghead.com/how-to-link-multiple-css-style-sheets-in-html'. -->
+        <link rel="stylesheet" href="/rsrcs/css_styles/style-loading_splashscreen.css">
+        <link rel="stylesheet" href="/rsrcs/css_styles/style.css">
+        <!--
+        Script call; e.g. this js script tag bootstraps PyScript.
+        - NOTE: threated as deferred script. Ref. 'https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup/24070373#24070373'.
+        -->
+        <script type="module" src="https://pyscript.net/releases/2025.8.1/core.js"></script>
+        <!--
+        JS script call: (module) loading splashscreen.
+        - If 'type' not defined, defaults to 'text/javascript': 'https://www.w3schools.com/tags/att_script_type.asp'.
+        - For HTML 5, if default, discouraged to be explicit, since it's redundant: 'https://stackoverflow.com/questions/4195427/is-the-type-attribute-necessary-for-script-tags/4195504#4195504'.
+        - 'type' module: 'https://forum.freecodecamp.org/t/the-type-module-in-html-file-whats-for/488865', 'https://stackoverflow.com/questions/39652618/classic-scripts-vs-module-scripts-in-javascript/53821485#53821485'.
+        - 'module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
+        - 'module' vs. 'non-module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
+        -->
+        <script type="module" src="/rsrcs/code_functionalities/app-loading_splashscreen.js"></script>
+    </head>
+    <body>
+        <!-- Main dialog (as 'modal', defined in js module 'app-loading_splashscreen.js'), what appears 1st as sson as web page is loaded. -->
+        <dialog id="dialog_loading">
+            <h1>Loading...</h1>
+        </dialog>
+        <main>
+            <nav class="main-nav">
+                <div class="main-nav-header">
+                    <!-- '/' in 'href' redirects to ROOT / HOME vs. '#' thta redirects to TOP of CURRENT PAGE (causing scrolling): 'https://stackoverflow.com/questions/17772692/what-does-it-means-when-there-is-fowards-slash-after-a-href/17772747#17772747', 'https://www.w3schools.com/tags/att_a_href.asp'. -->
+                    <a href="/"><img class="main-nav-header-logo" src="./rsrcs/media/img-logo.png" /></a>
+                    <!-- Blank 'href' REFRESH CURRENT PAGE; i.e. act as hyperlink to CURRENT PAGE: 'https://stackoverflow.com/questions/4855168/what-is-href-and-why-is-it-used/21397285#21397285'. -->
+                    <a class="main-nav-header-title" href="">Antigravity</a>
+                </div>
+            </nav>
+            <section class="main-pyscript">
+                <h1>Hello world!</h1>
+                <br>
+                <hr>
+                <!-- Display content: 'https://docs.pyscript.net/2024.5.2/user-guide/builtins/#pyscriptdisplay'. -->
+                <h2>Using 'pyscript.display': default (i.e. 'append=True') vs. 'append=False'.</h2>
+                <ul>
+                    <li><b>Default</b>: encapsulates the result from 'pyscript.display' between a 'div' tag. Then the 'div' gets ADDED to the inner content of the target DOM element.</li>
+                    <li><b>'append=False'</b>: RE-WRITES WHATEVER previous inner content of the target DOM, with the result from 'pyscript.display'.</li>
+                </ul>
+                <br>
+                <p><b>IMPORTANT</b>: whenever as possible, create an html element (and include an id) to populate with the result of 'pyscript.display' by using the 'target=' parameter / property. Otherwise, <b>un-expected behaviours</b> can happen, as the one described <i>in the comments of this html</i>.</p>
+                <br>
+                <p>Use the 'target=' specification inside the pyscript as a <b>parameter</b> of the 'pyscript.display' function: '<code>from pyscript import display display("PyScript running...", target="pyscript_output")</code>'.</p>
+                <br>
+                <p><b>CASE 01: default, default.</b></p>
+                <p><i>Default:</i></p>
+                <!--
+                If running ALONE: 'pyscript.display' adds new html element '<script-py>'', right after <script>...</script>: '<script-py id="py-0"><div>...<result_from_pyscript01>...</div></script-py>'.
+                - IMPORTANT: 'div' is added to ATTACH result, to ANY PREVIOUS inner content of the target DOM element; in this case '<script-py>', since target DOM wasn't specified in the 'pyscript.display' function.
+                -->
+                <script type="py" defer>
+                    from pyscript import display
+                    display("This is PyScript running... Default.", target="pyscript_tests_case01a")
+                </script>
+                <p id="pyscript_tests_case01a"></p>
+                <p><i>Default:</i></p>
+                <!--
+                When both 'script's run sequentially, it adds new html elements, but both results get placed at the end, RIGHT AFTER the LAST <script>...</script> EXECUTED (in case, target DOMs were NOT specified in the 'pyscript.display' functions):
+                - For 1st script, html element '<script-py id="py-0"></script-py>', still gets created in-place as regular (i.e. after the corresponding '<script>' element), but EMPTY; i.e. '<script-py id="py-0"></script-py>'.
+                - Outputs are ALL created and assigned to LAST html element '<script-py>' (in case, target DOMs were NOT specified in the 'pyscript.display' functions): '<script-py id="py-1"><div>...<result_from_pyscript01>...</div><div>...<result_from_pyscript02>...</div></script-py>'; id="py-0" to "py-1", in this case for x2 pyscripts executions.
+                -->
+                <script type="py" defer>
+                    from pyscript import display
+                    display("This is PyScript running... Default.", target="pyscript_tests_case01b")
+                </script>
+                <p id="pyscript_tests_case01b"></p>
+                <br>
+                <p><b>CASE 02: default, 'append=False'.</b></p>
+                <p><i>Default:</i></p>
+                <!-- [As first example.] -->
+                <script type="py" defer>
+                    from pyscript import display
+                    display("This is PyScript running... Default.", target="pyscript_tests_case02a")
+                </script>
+                <p id="pyscript_tests_case02a"></p>
+                </p><i>'append=False':</i></p>
+                <!--
+                If running ALONE: 'pyscript.display' adds new html element '<script-py>'', right after <script>...</script> (without <div>): '<script-py id="py-0">...<result_from_display>...</script-py>'.
+                - IMPORTANT: this time, there are no '<div>', since ANY PREVIOUS inner content of the target DOM element is OVERWRITTEN.
+                -->
+                <!--
+                When both 'script's run sequentially, it adds new html elements, but both results get placed at the end, RIGHT AFTER the LAST <script>...</script> EXECUTED (in case, target DOMs were NOT specified in the 'pyscript.display' functions):
+                - For 1st script, html element '<script-py id="py-0"></script-py>', still gets created in-place as regular (i.e. after the corresponding '<script>' element), but EMPTY; i.e. '<script-py id="py-0"></script-py>'.
+                - Created outputs depend on which pyscripts were run with 'append=False'. Any pyscript as such, WILL OVERWRITE ANY PREVIOUS inner content of the target DOM (in case, target DOMs were NOT specified in the 'pyscript.display' functions); in this case, 1st pyscript is overwritten and only results from 2nd pyscript are showed: '<script-py id="py-1">...<result_from_pyscript02>...</script-py>'; id="py-0" to "py-1", in this case for x2 scripts executions.
+                -->
+                <script type="py" defer>
+                    from pyscript import display
+                    display("This is PyScript running... 'append=False'.", append=False, target="pyscript_tests_case02b")
+                </script>
+                <p id="pyscript_tests_case02b"></p>
+                <br>
+                <h2>Example with 'pyscript.display': review 'pyscript.config' parameters.</h2>
+                <script type="py" defer>
+                    from pyscript import display, config
+                    display(config.get("files"), target="pyscript_output_config_files")
+                    display(config.get("packages"), target="pyscript_output_config_packages")
+                </script>
+                <p id="pyscript_output_config_files"><b>Config. files</b>: </p>
+                <p id="pyscript_output_config_packages"><b>Config packages</b>: </p>
+                <br>
+                <h2>Example with 'pyscript.display': display date and time. DOESN'T USE 'target=' specification.</h2>
+                <p>This is the current date and time, as computed by Python:</p>
+                <script type="py" defer>
+                    from pyscript import display
+                    from datetime import datetime
+                    now = datetime.now()
+                    display(now.strftime("%m/%d/%Y, %H:%M:%S"))
+                </script>
+                <br>
+                <hr>
+            </section>
+            <section class="main-pyscript">
+                <b>Based on xkcd: antigravity <a href="https://xkcd.com/353/" target="_blank">https://xkcd.com/353/</a>.</b>
+                <script type="py" src="/rsrcs/code_functionalities/main.py" config="/rsrcs/code_imports/main-pyscript.json" defer></script>
+                <!--
+                TODO: investigate how to redirect output to an html element.
+                - So far, un-successful; e.g. use 'svg' element.
+                - For now, it renders output in a 'svg' tag, but OUT of 'main', but inside of 'body'. Check with developer tools (F12), in a regular web-browser.
+                -->
+                <!-- <svg id="pyscript_output"></svg> -->
+            </section>
+        </main>
+    </body>
+</html>
