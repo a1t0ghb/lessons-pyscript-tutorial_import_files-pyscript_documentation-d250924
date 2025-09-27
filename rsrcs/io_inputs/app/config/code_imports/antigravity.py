@@ -7,7 +7,7 @@ from pyodide.ffi.wrappers import set_interval
 
 class Antigravity:
 
-    url = "/rsrcs/media/img-antigravity-white.svg"        #  Path with respect to 'HOME'.
+    url = "rsrcs/media/img-antigravity-white.svg"        #  Path with respect to 'HOME'.
 
     def __init__(self, target=None, interval=10, append=True, fly=False):
         if isinstance(target, str):

@@ -7,15 +7,15 @@
         <!-- Window title. -->
         <title>Antigravity</title>
         <!-- Window logo. -->
-        <link rel="icon" type="image/png" href="/rsrcs/media/icon-favicon.png" />
+        <link rel="icon" type="image/png" href="rsrcs/media/icon-favicon.png" />
         <!--
         External CSS stylesheet: 'https://www.w3schools.com/html/html_css.asp', 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link'.
         - In this case, PyScript CSS.
         -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" />
         <!-- External (local) CSS stylesheet, with multiple external CSS links. ORDER MATTERS! 'https://www.programminghead.com/how-to-link-multiple-css-style-sheets-in-html'. -->
-        <link rel="stylesheet" href="/rsrcs/io_inputs/app/config/css_styles/style-loading_splashscreen.css">
-        <link rel="stylesheet" href="/rsrcs/io_inputs/app/config/css_styles/style.css">
+        <link rel="stylesheet" href="rsrcs/io_inputs/app/config/css_styles/style-loading_splashscreen.css">
+        <link rel="stylesheet" href="rsrcs/io_inputs/app/config/css_styles/style.css">
         <!--
         Script call; e.g. this js script tag bootstraps PyScript.
         - NOTE: threated as deferred script. Ref. 'https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup/24070373#24070373'.
@@ -29,7 +29,7 @@
         - 'module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
         - 'module' vs. 'non-module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
         -->
-        <script type="module" src="/rsrcs/io_inputs/app/config/code_functionalities/app-loading_splashscreen.js"></script>
+        <script type="module" src="rsrcs/io_inputs/app/config/code_functionalities/app-loading_splashscreen.js"></script>
     </head>
     <body>
         <!-- Main dialog (as 'modal', defined in js module 'app-loading_splashscreen.js'), what appears 1st as sson as web page is loaded. -->
@@ -129,7 +129,7 @@
             </section>
             <section class="main-pyscript">
                 <b>Based on xkcd: antigravity <a href="https://xkcd.com/353/" target="_blank">https://xkcd.com/353/</a>.</b>
-                <script type="py" src="/rsrcs/io_inputs/app/config/code_functionalities/main.py" config="/rsrcs/io_inputs/app/config/code_imports/main-pyscript.json" defer></script>
+                <script type="py" src="rsrcs/io_inputs/app/config/code_functionalities/main.py" config="rsrcs/io_inputs/app/config/code_imports/main-pyscript.json" defer></script>
                 <!--
                 TODO: investigate how to redirect output to an html element.
                 - So far, un-successful; e.g. use 'svg' element.
