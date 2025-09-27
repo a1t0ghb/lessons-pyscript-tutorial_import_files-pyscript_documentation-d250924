@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Window title. -->
-        <title>Antigravity</title>
+        <title>PyScript Exercises</title>
         <!-- Window logo. -->
         <link rel="icon" type="image/png" href="rsrcs/media/icon-favicon.png" />
         <!--
@@ -14,8 +14,8 @@
         -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" />
         <!-- External (local) CSS stylesheet, with multiple external CSS links. ORDER MATTERS! 'https://www.programminghead.com/how-to-link-multiple-css-style-sheets-in-html'. -->
-        <link rel="stylesheet" href="rsrcs/io_inputs/app/config/web_pages/_style-loading_splashscreen.css">
-        <link rel="stylesheet" href="rsrcs/io_inputs/app/config/web_pages/index-style.css">
+        <link rel="stylesheet" href="rsrcs/io_inputs/app/config/web_pages/index-loading_splashscreen_(style).css">
+        <link rel="stylesheet" href="rsrcs/io_inputs/app/config/web_pages/index_(style).css">
         <!--
         Script call; e.g. this js script tag bootstraps PyScript.
         - NOTE: threated as deferred script. Ref. 'https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup/24070373#24070373'.
@@ -29,22 +29,33 @@
         - 'module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
         - 'module' vs. 'non-module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
         -->
-        <script type="module" src="rsrcs/io_inputs/app/config/web_pages/_app-loading_splashscreen.js"></script>
+        <script type="module" src="rsrcs/io_inputs/app/config/web_pages/index-loading_splashscreen_(app).js"></script>
     </head>
     <body>
-        <!-- Main dialog (as 'modal', defined in js module 'app-loading_splashscreen.js'), what appears 1st as sson as web page is loaded. -->
+        <!-- Main dialog (as 'modal', defined in js module '_app-loading_splashscreen.js'), what appears 1st as soon as web page is loaded. -->
         <dialog id="dialog_loading">
             <h1>Loading...</h1>
         </dialog>
-        <main>
-            <nav class="main-nav">
-                <div class="main-nav-header">
+        <header class="header">
+            <nav class="header-nav">
+                <div class="header-nav-left_aligned">
+                    <img class="header-nav-left_aligned-logo" src="rsrcs/media/img-logo.png" />
+                    <div class="header-nav-left_aligned-links_container">
+                        <a class="header-nav-left_aligned-links_container-link" href="index.html"><b>HOME</b></a>
+                        <!-- <a class="header-nav-left_aligned-links_container-link" href="rsrcs/io_inputs/app/config/web_pages/hello_world.html">Hello World</a>
+                        <a class="header-nav-left_aligned-links_container-link" href="rsrcs/io_inputs/app/config/web_pages/antigravity.html">Antigravity</a> -->
+                    </div>
+                </div>
+                <div class="header-nav-links_container">
                     <!-- '/' in 'href' redirects to ROOT vs. '#' that redirects to TOP of CURRENT PAGE (causing scrolling): 'https://stackoverflow.com/questions/17772692/what-does-it-means-when-there-is-fowards-slash-after-a-href/17772747#17772747', 'https://www.w3schools.com/tags/att_a_href.asp'. -->
-                    <a href="/"><img class="main-nav-header-logo" src="rsrcs/media/img-logo.png" /></a>
+                    <a class="header-nav-links_container-link" href="/">[GOTO ROOT]</a>
                     <!-- Blank 'href' REFRESH CURRENT PAGE; i.e. act as hyperlink to CURRENT PAGE: 'https://stackoverflow.com/questions/4855168/what-is-href-and-why-is-it-used/21397285#21397285'. -->
-                    <a class="main-nav-header-title" href="">Antigravity</a>
+                    <a class="header-nav-links_container-link" href="">[Refresh Current Page]</a>
+                    <a class="header-nav-links_container-link" href="#">[GOTO TOP]</a>
                 </div>
             </nav>
+        </header>
+        <main>
             <section class="main-pyscript">
                 <h1>Hello world!</h1>
                 <br>
