@@ -5,18 +5,18 @@
 - HTML <a> tag not redirecting: 'https://stackoverflow.com/questions/8260546/make-a-html-link-that-does-nothing-literally-nothing/8260561#8260561', 'https://www.geeksforgeeks.org/html/how-to-create-html-link-that-does-not-follow-the-link/'.
 -->
 
-<!-- Badge: WIP -->
+<!-- Badge: WIP
 <p align="left">
   <a href="#" onclick="return false;"><img src="https://img.shields.io/badge/STATUS-WIP-yellow?style=flat"/></a>
-</p>
+</p> -->
 <!--
 🚧 WIP: section under construction. 🚧
 -->
 
-<!-- Badge: Done 
+<!-- Badge: Done -->
 <p align="left">
   <a href="#" onclick="return false;"><img src="https://img.shields.io/badge/STATUS-DONE-green?style=flat"/></a>
-</p> -->
+</p>
 
 <!-- README structure followed:
 - 'https://www.aluracursos.com/blog/como-escribir-un-readme-increible-en-tu-github/'.
@@ -44,9 +44,7 @@ Image width for GitHub READMEs:
     <img src="./rsrcs/media/img-readme_frontpage_media.png" width="1200" />
 </p> -->
 <p align="center">
-    <span>🚧 WIP: section under construction. 🚧</span>
-    <br>
-    <img src="./rsrcs/media/img-readme_frontpage_gif.gif" width="600" />
+    <img src="./rsrcs/media/img-readme_frontpage_gif.gif" width="1200" />
 </p>
 
 Portfolio to showcase different `PyScript` exercises to learn how to run `Python` in a web-browser. [PyScript](https://pyscript.net/) is an open source platform for running `Python` 'natively' in the browser.
