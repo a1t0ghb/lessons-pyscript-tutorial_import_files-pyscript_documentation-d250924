@@ -29,6 +29,8 @@ VARIABLES DECLARATION.
     --colors_01: #F0AB3C;
     --colors_02: #F6F6F6;
     --colors_03: #000000;
+    --colors_04: #22D4FD;
+    --colors_05: #272727;
     --fonts_fallback: system-ui, sans-serif;            /* Hierarchical list of fonts; from preferred, to fallback: 'https://www.w3schools.com/cssref/pr_font_font-family.php', 'https://developer.mozilla.org/en-US/docs/Web/CSS/font-family', 'https://www.w3schools.com/css/css_font_websafe.asp'. */
     --line_height_default: 1.5;
     --fonts_main: "Montserrat", var(--fonts_fallback);
@@ -112,8 +114,16 @@ ul {
         text-decoration-line: none;
     }
 
-    .main-pyscript {
+    .main-content {
         margin: 0.5rem;
     }
 
+    .main-content-list_link {
+        color: var(--colors_01);
+        text-decoration-line: none;
+    }
+
+    .main-content-pyscript_output_text {
+        color: var(--colors_04);
+    }
 }

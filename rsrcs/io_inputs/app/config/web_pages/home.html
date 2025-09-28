@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Semantic tags: 'https://www.semrush.com/blog/semantic-html5-guide/', 'https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantic_elements'. -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Window title. -->
+        <title>PyScript Exercises</title>
+        <!-- Window logo. Goes up x4 folder levels to get to 'media' (rsrcs < io_inputs < app < config < web_pages), where it's stored. -->
+        <link rel="icon" type="image/png" href="./../../../../media/icon-favicon.png" />
+        <!--
+        External CSS stylesheet: 'https://www.w3schools.com/html/html_css.asp', 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link'.
+        - In this case, PyScript CSS.
+        -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" />
+        <!-- External (local) CSS stylesheet, with multiple external CSS links. ORDER MATTERS! 'https://www.programminghead.com/how-to-link-multiple-css-style-sheets-in-html'. -->
+        <link rel="stylesheet" href="./home-loading_splashscreen_(style).css">
+        <link rel="stylesheet" href="./home_(style).css">
+        <!--
+        Script call; e.g. this js script tag bootstraps PyScript.
+        - NOTE: threated as deferred script. Ref. 'https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup/24070373#24070373'.
+        -->
+        <script type="module" src="https://pyscript.net/releases/2025.8.1/core.js"></script>
+        <!--
+        JS script call: (module) loading splashscreen.
+        - If 'type' not defined, defaults to 'text/javascript': 'https://www.w3schools.com/tags/att_script_type.asp'.
+        - For HTML 5, if default, discouraged to be explicit, since it's redundant: 'https://stackoverflow.com/questions/4195427/is-the-type-attribute-necessary-for-script-tags/4195504#4195504'.
+        - 'type' module: 'https://forum.freecodecamp.org/t/the-type-module-in-html-file-whats-for/488865', 'https://stackoverflow.com/questions/39652618/classic-scripts-vs-module-scripts-in-javascript/53821485#53821485'.
+        - 'module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
+        - 'module' vs. 'non-module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
+        -->
+        <script type="module" src="./home-loading_splashscreen_(app).js"></script>
+        <!-- Fallback call to PyScript script to trigger 'py:ready' event, in case there are no PyScript scripts in the page. -->
+        <script type="py" defer></script>
+    </head>
+    <body>
+        <!-- Main dialog (as 'modal', defined in js module '_app-loading_splashscreen.js'), what appears 1st as soon as web page is loaded. -->
+        <dialog id="dialog_loading">
+            <h1>Loading...</h1>
+        </dialog>
+        <header class="header">
+            <nav class="header-nav">
+                <div class="header-nav-left_aligned">
+                    <img class="header-nav-left_aligned-logo" src="./../../../../media/img-logo.png" />
+                    <div class="header-nav-left_aligned-links_container">
+                        <a class="header-nav-left_aligned-links_container-link" href="./home.html"><b>HOME</b></a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./hello_world.html">Hello World</a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./antigravity.html">Antigravity</a>
+                    </div>
+                </div>
+                <div class="header-nav-links_container">
+                    <!-- '/' in 'href' redirects to ROOT vs. '#' that redirects to TOP of CURRENT PAGE (causing scrolling): 'https://stackoverflow.com/questions/17772692/what-does-it-means-when-there-is-fowards-slash-after-a-href/17772747#17772747', 'https://www.w3schools.com/tags/att_a_href.asp'. -->
+                    <a class="header-nav-links_container-link" href="/">[GOTO ROOT]</a>
+                    <!-- Blank 'href' REFRESH CURRENT PAGE; i.e. act as hyperlink to CURRENT PAGE: 'https://stackoverflow.com/questions/4855168/what-is-href-and-why-is-it-used/21397285#21397285'. -->
+                    <a class="header-nav-links_container-link" href="">[Refresh Current Page]</a>
+                    <a class="header-nav-links_container-link" href="#">[GOTO TOP]</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="main-content">
+                <h1>PyScript Exercises.</h1>
+                <br>
+                <p>This is a list of exercises to study <code>PyScript</code>. These exercises come from the <b><a href="https://docs.pyscript.net/2024.5.2/examples/" target="_blank">official PyScript documentation</a></b>, where several examples are listed, starting with basics such as '<a href="https://pyscript.com/@examples/hello-world/latest" target="_blank">Hello World</a>', and digging into <a href="https://pyscript.com/@examples/altair/latest" target="_blank">plotting data</a>.</p>
+                <br>
+                <ul>
+                    <li><a class="main-content-list_link" href="./hello_world.html">Hello World</a>: start learing how to use <code>PyScript</code> to run <code>Python</code> in a browser.</li>
+                    <li><a class="main-content-list_link" href="./antigravity.html">Antigravity</a>: import files, using <code>PyScript</code> <a href="https://docs.pyscript.net/2024.5.2/user-guide/configuration/#files" target="_blank"> configuration file (TOML or JSON)</a>.</li>
+                </ul>
+            </section>
+        </main>
+    </body>
+</html>

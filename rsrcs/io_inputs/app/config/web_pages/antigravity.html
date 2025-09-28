@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Semantic tags: 'https://www.semrush.com/blog/semantic-html5-guide/', 'https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantic_elements'. -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Window title. -->
+        <title>Antigravity | PyScript Exercises</title>
+        <!-- Window logo. Goes up x4 folder levels to get to 'media' (rsrcs < io_inputs < app < config < web_pages), where it's stored. -->
+        <link rel="icon" type="image/png" href="./../../../../media/icon-favicon.png" />
+        <!--
+        External CSS stylesheet: 'https://www.w3schools.com/html/html_css.asp', 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link'.
+        - In this case, PyScript CSS.
+        -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" />
+        <!-- External (local) CSS stylesheet, with multiple external CSS links. ORDER MATTERS! 'https://www.programminghead.com/how-to-link-multiple-css-style-sheets-in-html'. -->
+        <link rel="stylesheet" href="./home-loading_splashscreen_(style).css">
+        <link rel="stylesheet" href="./home_(style).css">
+        <!--
+        Script call; e.g. this js script tag bootstraps PyScript.
+        - NOTE: threated as deferred script. Ref. 'https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup/24070373#24070373'.
+        -->
+        <script type="module" src="https://pyscript.net/releases/2025.8.1/core.js"></script>
+        <!--
+        JS script call: (module) loading splashscreen.
+        - If 'type' not defined, defaults to 'text/javascript': 'https://www.w3schools.com/tags/att_script_type.asp'.
+        - For HTML 5, if default, discouraged to be explicit, since it's redundant: 'https://stackoverflow.com/questions/4195427/is-the-type-attribute-necessary-for-script-tags/4195504#4195504'.
+        - 'type' module: 'https://forum.freecodecamp.org/t/the-type-module-in-html-file-whats-for/488865', 'https://stackoverflow.com/questions/39652618/classic-scripts-vs-module-scripts-in-javascript/53821485#53821485'.
+        - 'module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
+        - 'module' vs. 'non-module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
+        -->
+        <script type="module" src="./home-loading_splashscreen_(app).js"></script>
+        <!-- Fallback call to PyScript script to trigger 'py:ready' event, in case there are no PyScript scripts in the page. -->
+        <script type="py" defer></script>
+    </head>
+    <body>
+        <!-- Main dialog (as 'modal', defined in js module '_app-loading_splashscreen.js'), what appears 1st as soon as web page is loaded. -->
+        <dialog id="dialog_loading">
+            <h1>Loading...</h1>
+        </dialog>
+        <header class="header">
+            <nav class="header-nav">
+                <div class="header-nav-left_aligned">
+                    <img class="header-nav-left_aligned-logo" src="./../../../../media/img-logo.png" />
+                    <div class="header-nav-left_aligned-links_container">
+                        <a class="header-nav-left_aligned-links_container-link" href="./home.html">Home</a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./hello_world.html">Hello World</a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./antigravity.html"><b>ANTIGRAVITY</b></a>
+                    </div>
+                </div>
+                <div class="header-nav-links_container">
+                    <!-- '/' in 'href' redirects to ROOT vs. '#' that redirects to TOP of CURRENT PAGE (causing scrolling): 'https://stackoverflow.com/questions/17772692/what-does-it-means-when-there-is-fowards-slash-after-a-href/17772747#17772747', 'https://www.w3schools.com/tags/att_a_href.asp'. -->
+                    <a class="header-nav-links_container-link" href="/">[GOTO ROOT]</a>
+                    <!-- Blank 'href' REFRESH CURRENT PAGE; i.e. act as hyperlink to CURRENT PAGE: 'https://stackoverflow.com/questions/4855168/what-is-href-and-why-is-it-used/21397285#21397285'. -->
+                    <a class="header-nav-links_container-link" href="">[Refresh Current Page]</a>
+                    <a class="header-nav-links_container-link" href="#">[GOTO TOP]</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="main-content">
+                <h1>'Antigravity' Example.</h1>
+                <p><b>URL for reference</b>: '<a href="https://pyscript.com/@examples/antigravity/latest" target="_blank">https://pyscript.com/@examples/antigravity/latest</a>'.</p>
+                <br>
+                <p>This application is based on the famous XKCD comic <a href="https://xkcd.com/353/" target="_blank">Python</a>. It creates an <code>Antigravity</code> class to load a svg and then use PyScript to display and animate it.</p>
+                <br>
+                <p>It also shows you how you can import a file and use it in your Pyscript application - have a look at <code>pyscript.toml</code> to see how it's done.</p>
+                <br>
+                <hr>
+                <p><b>Validation of 'pyscript.config' parameters.</b></p>
+                <!-- USe of 'span' element / tag to manipulate text; more specifi, as an inline element: 'https://www.freecodecamp.org/news/span-html-how-to-use-the-span-tag-with-css/', 'https://www.w3schools.com/tags/tag_span.asp'. -->
+                <p><b>Config. files</b>: <span id="pyscript_output_config_files" class="main-content-pyscript_output_text"></span></p>
+                <p><b>Config packages</b>: <span id="pyscript_output_config_packages" class="main-content-pyscript_output_text"></span></p>
+                <script type="py" defer>
+                    from pyscript import display, config
+                    display(config.get("files"), target="pyscript_output_config_files")
+                    display(config.get("packages"), target="pyscript_output_config_packages")
+                </script>
+                <br>
+                <b>Based on xkcd: antigravity <a href="https://xkcd.com/353/" target="_blank">https://xkcd.com/353/</a>.</b>
+                <br>
+                <script type="py" src="./../imports/main.py" config="./../imports/main-pyscript.json" defer></script>
+                <!--
+                TODO: investigate how to redirect output to an html element.
+                - So far, un-successful; e.g. use 'svg' element.
+                - For now, it renders output in a 'svg' tag, but OUT of 'main', still inside of 'body'. Check with developer tools (F12), in a regular web-browser.
+                -->
+                <!-- <svg id="pyscript_output"></svg> -->
+            </section>
+        </main>
+    </body>
+</html>

@@ -3,15 +3,25 @@
 
     /* CUSTOM CLASSES. */
     
-    /* Loading splashscreen: 'modal' dialog; i.e. dialog that locks user interactivity. */
-    #dialog_loading {
+    /*
+    Loading splashscreen: 'modal' dialog; i.e. dialog that locks user interactivity.
+    - IMPORTANT: be careful with stylings in dialogs! They have 2 STYLE-INDEPENDENT STATES; visible (open) AND hidden (close).
+    - Ref.: 'https://dev.to/mayashavin/making-dialog-with-html-dialog-element-1lpp', 'https://css-tricks.com/some-hands-on-with-the-html-dialog-element/'.
+    - Set styles independently, or un-expected behaviours will happen: 'https://stackoverflow.com/questions/60365510/html5-dialog-element-close-button-not-working-properly/72161395#72161395'.
+    */
+    #dialog_loading[open] {
         margin: auto;                               /* If setting 'margin: 0;' in all html elements; i.e. in CSS '* { margin: 0; }', restores default margin so it's centered: 'https://stackoverflow.com/questions/73925255/how-can-the-html-dialog-element-be-positioned-according-to-normal-flow-when-op/77652902#77652902'. */
+        padding: 20px;                              /* Adjusting padding, if setting 'padding: 0;' in all html elements; i.e. in CSS '* { padding: 0; }'. */
+        background-color: rgb(0 0 0 / 0.85);      /* Make a box semi-transparent: 'https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_CSS_problems/Make_box_transparent'.*/
         color: #CCDAD1;                           /* If setting a 'dark theme' for the body; i.e. in CSS 'body { background-color: var(--colors_background); color: var(--colors_01); }', to match theme. 'dialog' elements do not inherit properties from 'html' and child elements, like 'body'. */
         outline: none;
         border: none;
         width: 100vw;
-        height: 100vh;
-        background-color: rgb(0 0 0 / 0.85);    /* Make a box semi-transparent: 'https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_CSS_problems/Make_box_transparent'.*/
+        height: 100vw;
+        /* Perfect centering, using flexbox: 'https://www.w3schools.com/css/css3_flexbox_container.asp'. */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 }
