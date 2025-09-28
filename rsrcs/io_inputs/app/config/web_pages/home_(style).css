@@ -56,6 +56,15 @@ html {
 body {
     background-color: var(--colors_background);
     color: var(--colors_02);
+    /* Make 'footer' stay at the bottom, by expanding 'main': 'https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b/20352949#20352949'. */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;                                  /* Change height display to MINIMUM 100% of VISIBLE screen. */
+}
+
+main {
+    /* Make 'footer' stay at the bottom, by expanding 'main': 'https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b/20352949#20352949'. */
+    flex-grow: 1;
 }
 
 ul {
@@ -125,5 +134,12 @@ ul {
 
     .main-content-pyscript_output_text {
         color: var(--colors_04);
+    }
+
+    .footer {
+        background-color: var(--colors_01);
+        color: var(--colors_background);
+        text-align: center;
+        padding: 12px;
     }
 }
