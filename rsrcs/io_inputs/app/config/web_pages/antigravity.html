@@ -46,6 +46,7 @@
                         <a class="header-nav-left_aligned-links_container-link" href="./home.html">Home</a>
                         <a class="header-nav-left_aligned-links_container-link" href="./hello_world.html">Hello World</a>
                         <a class="header-nav-left_aligned-links_container-link" href="./antigravity.html"><b>ANTIGRAVITY</b></a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./pandas.html">Pandas</a>
                     </div>
                 </div>
                 <div class="header-nav-links_container">
@@ -68,18 +69,18 @@
                 <br>
                 <hr>
                 <p><b>Validation of 'pyscript.config' parameters.</b></p>
-                <!-- USe of 'span' element / tag to manipulate text; more specifi, as an inline element: 'https://www.freecodecamp.org/news/span-html-how-to-use-the-span-tag-with-css/', 'https://www.w3schools.com/tags/tag_span.asp'. -->
-                <p><b>Config. files</b>: <span id="pyscript_output_config_files" class="main-content-pyscript_output_text"></span></p>
-                <p><b>Config packages</b>: <span id="pyscript_output_config_packages" class="main-content-pyscript_output_text"></span></p>
                 <script type="py" defer>
                     from pyscript import display, config
                     display(config.get("files"), target="pyscript_output_config_files")
                     display(config.get("packages"), target="pyscript_output_config_packages")
                 </script>
+                <!-- Use of 'span' element / tag to manipulate text; more specific, as an inline element: 'https://www.freecodecamp.org/news/span-html-how-to-use-the-span-tag-with-css/', 'https://www.w3schools.com/tags/tag_span.asp'. -->
+                <p><b>Config. files</b>: <span id="pyscript_output_config_files" class="main-content-pyscript_output_text"></span></p>
+                <p><b>Config packages</b>: <span id="pyscript_output_config_packages" class="main-content-pyscript_output_text"></span></p>
                 <br>
                 <b>Based on xkcd: antigravity <a href="https://xkcd.com/353/" target="_blank">https://xkcd.com/353/</a>.</b>
                 <br>
-                <script type="py" src="./../imports/main.py" config="./../imports/main-pyscript.json" defer></script>
+                <script type="py" src="./../imports/antigravity_launcher.py" config="./../imports/antigravity_launcher-pyscript.json" defer></script>
                 <!--
                 TODO: investigate how to redirect output to an html element.
                 - So far, un-successful; e.g. use 'svg' element.
@@ -89,7 +90,7 @@
             </section>
         </main>
         <footer class="footer">
-            <p>Desarrollado por: a1t0ghb | <a href="https://github.com/a1t0ghb" target="_blank">https://github.com/a1t0ghb</a> | <a href="mailto:js101@a1t0.aleeas.com" target="_blank">js101@a1t0.aleeas.com</a></p>
+            <p>Developed by: a1t0ghb | <a href="https://github.com/a1t0ghb" target="_blank">https://github.com/a1t0ghb</a> | <a href="mailto:js101@a1t0.aleeas.com" target="_blank">js101@a1t0.aleeas.com</a></p>
         </footer>
     </body>
 </html>

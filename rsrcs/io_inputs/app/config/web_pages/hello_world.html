@@ -46,6 +46,7 @@
                         <a class="header-nav-left_aligned-links_container-link" href="./home.html">Home</a>
                         <a class="header-nav-left_aligned-links_container-link" href="./hello_world.html"><b>HELLO WORLD</b></a>
                         <a class="header-nav-left_aligned-links_container-link" href="./antigravity.html">Antigravity</a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./pandas.html">Pandas</a>
                     </div>
                 </div>
                 <div class="header-nav-links_container">
@@ -82,31 +83,31 @@
                 If running ALONE: 'pyscript.display' adds new html element '<script-py>'', right after <script>...</script>: '<script-py id="py-0"><div>...<result_from_pyscript01>...</div></script-py>'.
                 - IMPORTANT: 'div' is added to ATTACH result, to ANY PREVIOUS inner content of the target DOM element; in this case '<script-py>', since target DOM wasn't specified in the 'pyscript.display' function.
                 -->
-                <p id="pyscript_tests_case01a" class="main-content-pyscript_output_text"></p>
                 <script type="py" defer>
                     from pyscript import display
                     display("This is PyScript running... Default.", target="pyscript_tests_case01a")
                 </script>
+                <p id="pyscript_tests_case01a" class="main-content-pyscript_output_text"></p>
                 <p><i>Default:</i></p>
                 <!--
                 When both 'script's run sequentially, it adds new html elements, but both results get placed at the end, RIGHT AFTER the LAST <script>...</script> EXECUTED (in case, target DOMs were NOT specified in the 'pyscript.display' functions):
                 - For 1st script, html element '<script-py id="py-0"></script-py>', still gets created in-place as regular (i.e. after the corresponding '<script>' element), but EMPTY; i.e. '<script-py id="py-0"></script-py>'.
                 - Outputs are ALL created and assigned to LAST html element '<script-py>' (in case, target DOMs were NOT specified in the 'pyscript.display' functions): '<script-py id="py-1"><div>...<result_from_pyscript01>...</div><div>...<result_from_pyscript02>...</div></script-py>'; id="py-0" to "py-1", in this case for x2 pyscripts executions.
                 -->
-                <p id="pyscript_tests_case01b" class="main-content-pyscript_output_text"></p>
                 <script type="py" defer>
                     from pyscript import display
                     display("This is PyScript running... Default.", target="pyscript_tests_case01b")
                 </script>
+                <p id="pyscript_tests_case01b" class="main-content-pyscript_output_text"></p>
                 <br>
                 <p><b>CASE 02: default, 'append=False'.</b></p>
                 <p><i>Default:</i></p>
                 <!-- [As first example.] -->
-                <p id="pyscript_tests_case02a" class="main-content-pyscript_output_text"></p>
                 <script type="py" defer>
                     from pyscript import display
                     display("This is PyScript running... Default.", target="pyscript_tests_case02a")
                 </script>
+                <p id="pyscript_tests_case02a" class="main-content-pyscript_output_text"></p>
                 </p><i>'append=False':</i></p>
                 <!--
                 If running ALONE: 'pyscript.display' adds new html element '<script-py>'', right after <script>...</script> (without <div>): '<script-py id="py-0">...<result_from_display>...</script-py>'.
@@ -117,22 +118,22 @@
                 - For 1st script, html element '<script-py id="py-0"></script-py>', still gets created in-place as regular (i.e. after the corresponding '<script>' element), but EMPTY; i.e. '<script-py id="py-0"></script-py>'.
                 - Created outputs depend on which pyscripts were run with 'append=False'. Any pyscript as such, WILL OVERWRITE ANY PREVIOUS inner content of the target DOM (in case, target DOMs were NOT specified in the 'pyscript.display' functions); in this case, 1st pyscript is overwritten and only results from 2nd pyscript are showed: '<script-py id="py-1">...<result_from_pyscript02>...</script-py>'; id="py-0" to "py-1", in this case for x2 scripts executions.
                 -->
-                <p id="pyscript_tests_case02b" class="main-content-pyscript_output_text"></p>
                 <script type="py" defer>
                     from pyscript import display
                     display("This is PyScript running... 'append=False'.", append=False, target="pyscript_tests_case02b")
                 </script>
+                <p id="pyscript_tests_case02b" class="main-content-pyscript_output_text"></p>
                 <br>
                 <hr>
                 <h2>Example with 'pyscript.display': review 'pyscript.config' parameters.</h2>
-                <!-- USe of 'span' element / tag to manipulate text; more specifi, as an inline element: 'https://www.freecodecamp.org/news/span-html-how-to-use-the-span-tag-with-css/', 'https://www.w3schools.com/tags/tag_span.asp'. -->
-                <p><b>Config. files</b>: <span id="pyscript_output_config_files" class="main-content-pyscript_output_text"></span></p>
-                <p><b>Config packages</b>: <span id="pyscript_output_config_packages" class="main-content-pyscript_output_text"></span></p>
                 <script type="py" defer>
                     from pyscript import display, config
                     display(config.get("files"), target="pyscript_output_config_files")
                     display(config.get("packages"), target="pyscript_output_config_packages")
                 </script>
+                <!-- Use of 'span' element / tag to manipulate text; more specific, as an inline element: 'https://www.freecodecamp.org/news/span-html-how-to-use-the-span-tag-with-css/', 'https://www.w3schools.com/tags/tag_span.asp'. -->
+                <p><b>Config. files</b>: <span id="pyscript_output_config_files" class="main-content-pyscript_output_text"></span></p>
+                <p><b>Config packages</b>: <span id="pyscript_output_config_packages" class="main-content-pyscript_output_text"></span></p>
                 <br>
                 <hr>
                 <h2>Example with 'pyscript.display': display date and time, NOT USING 'target=' specification.</h2>
@@ -148,7 +149,7 @@
             </section>
         </main>
         <footer class="footer">
-            <p>Desarrollado por: a1t0ghb | <a href="https://github.com/a1t0ghb" target="_blank">https://github.com/a1t0ghb</a> | <a href="mailto:js101@a1t0.aleeas.com" target="_blank">js101@a1t0.aleeas.com</a></p>
+            <p>Developed by: a1t0ghb | <a href="https://github.com/a1t0ghb" target="_blank">https://github.com/a1t0ghb</a> | <a href="mailto:js101@a1t0.aleeas.com" target="_blank">js101@a1t0.aleeas.com</a></p>
         </footer>
     </body>
 </html>
