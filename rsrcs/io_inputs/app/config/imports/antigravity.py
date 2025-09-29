@@ -7,7 +7,7 @@ from pyodide.ffi.wrappers import set_interval
 
 class Antigravity:
 
-    url = "./../../../../media/img-antigravity-white.svg"           #  Source image. Goes up x4 folder levels to get to 'media' (rsrcs < io_inputs < app < config < web_pages), where it's stored.
+    url = "./../../../../../media/img-antigravity-white.svg"           #  Source image. Goes up x(4 + 1) folder levels to get to 'media' (imports < config < app < io_inputs < rsrcs > media), where it's stored.
 
     def __init__(self, target=None, interval=10, append=True, fly=False):
         if isinstance(target, str):

@@ -5,17 +5,17 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- Window title. -->
-        <title>PyScript Exercises</title>
-        <!-- Window logo. Goes up x4 folder levels to get to 'media' (rsrcs < io_inputs < app < config < web_pages), where it's stored. -->
-        <link rel="icon" type="image/png" href="./../../../../media/icon-favicon.png" />
+        <title>Antigravity | PyScript Exercises</title>
+        <!-- Window logo. Goes up x5 folder levels to get to 'media' ([CURRENT DIR.] < web_pages < config < app < io_inputs < rsrcs > media), where it's stored. -->
+        <link rel="icon" type="image/png" href="./../../../../../media/icon-favicon.png" />
         <!--
         External CSS stylesheet: 'https://www.w3schools.com/html/html_css.asp', 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link'.
         - In this case, PyScript CSS.
         -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" />
         <!-- External (local) CSS stylesheet, with multiple external CSS links. ORDER MATTERS! 'https://www.programminghead.com/how-to-link-multiple-css-style-sheets-in-html'. -->
-        <link rel="stylesheet" href="./home-loading_splashscreen_(style).css">
-        <link rel="stylesheet" href="./home_(style).css">
+        <link rel="stylesheet" href="./../loading_splashscreen_(style).css">
+        <link rel="stylesheet" href="./../style.css">
         <!--
         Script call; e.g. this js script tag bootstraps PyScript.
         - NOTE: threated as deferred script. Ref. 'https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup/24070373#24070373'.
@@ -29,7 +29,7 @@
         - 'module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
         - 'module' vs. 'non-module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
         -->
-        <script type="module" src="./home-loading_splashscreen_(app).js"></script>
+        <script type="module" src="./../loading_splashscreen_(app).js"></script>
         <!-- Fallback call to PyScript script to trigger 'py:ready' event, in case there are no PyScript scripts in the page. -->
         <script type="py" defer></script>
     </head>
@@ -41,12 +41,12 @@
         <header class="header">
             <nav class="header-nav">
                 <div class="header-nav-left_aligned">
-                    <img class="header-nav-left_aligned-logo" src="./../../../../media/img-logo.png" />
+                    <img class="header-nav-left_aligned-logo" src="./../../../../../media/img-logo.png" />
                     <div class="header-nav-left_aligned-links_container">
-                        <a class="header-nav-left_aligned-links_container-link" href="./home.html"><b>HOME</b></a>
-                        <a class="header-nav-left_aligned-links_container-link" href="./hello_world.html">Hello World</a>
-                        <a class="header-nav-left_aligned-links_container-link" href="./antigravity.html">Antigravity</a>
-                        <a class="header-nav-left_aligned-links_container-link" href="./pandas.html">Pandas</a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./../01/home.html">Home</a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./../02/hello_world.html">Hello World</a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./../03/antigravity.html"><b>ANTIGRAVITY</b></a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./../04/pandas.html">Pandas</a>
                     </div>
                 </div>
                 <div class="header-nav-links_container">
@@ -60,14 +60,33 @@
         </header>
         <main>
             <section class="main-content">
-                <h1>PyScript Exercises.</h1>
+                <h1>'Antigravity' Example.</h1>
+                <p><b>URL for reference</b>: '<a href="https://pyscript.com/@examples/antigravity/latest" target="_blank">https://pyscript.com/@examples/antigravity/latest</a>'.</p>
                 <br>
-                <p>This is a list of exercises to study <code>PyScript</code>. These exercises come from the <b><a href="https://docs.pyscript.net/2024.5.2/examples/" target="_blank">official PyScript documentation</a></b>, where several examples are listed, starting with basics such as '<a href="https://pyscript.com/@examples/hello-world/latest" target="_blank">Hello World</a>', and digging into <a href="https://pyscript.com/@examples/altair/latest" target="_blank">plotting data</a>.</p>
+                <p>This application is based on the famous XKCD comic <a href="https://xkcd.com/353/" target="_blank">Python</a>. It creates an <code>Antigravity</code> class to load a svg and then use PyScript to display and animate it.</p>
                 <br>
-                <ul>
-                    <li><a class="main-content-list_link" href="./hello_world.html">Hello World</a>: start learing how to use <code>PyScript</code> to run <code>Python</code> in a browser.</li>
-                    <li><a class="main-content-list_link" href="./antigravity.html">Antigravity</a>: import files, using <code>PyScript</code> <a href="https://docs.pyscript.net/2024.5.2/user-guide/configuration/#files" target="_blank"> configuration file (TOML or JSON)</a>.</li>
-                </ul>
+                <p>It also shows you how you can import a file and use it in your Pyscript application - have a look at <code>pyscript.toml</code> to see how it's done.</p>
+                <br>
+                <hr>
+                <p><b>Validation of 'pyscript.config' parameters.</b></p>
+                <script type="py" defer>
+                    from pyscript import display, config
+                    display(config.get("files"), target="pyscript_output_config_files")
+                    display(config.get("packages"), target="pyscript_output_config_packages")
+                </script>
+                <!-- Use of 'span' element / tag to manipulate text; more specific, as an inline element: 'https://www.freecodecamp.org/news/span-html-how-to-use-the-span-tag-with-css/', 'https://www.w3schools.com/tags/tag_span.asp'. -->
+                <p><b>Config. files</b>: <span id="pyscript_output_config_files" class="main-content-pyscript_output_text"></span></p>
+                <p><b>Config packages</b>: <span id="pyscript_output_config_packages" class="main-content-pyscript_output_text"></span></p>
+                <br>
+                <b>Based on xkcd: antigravity <a href="https://xkcd.com/353/" target="_blank">https://xkcd.com/353/</a>.</b>
+                <br>
+                <script type="py" src="./../../imports/antigravity_launcher.py" config="./../../imports/antigravity_launcher_(pyscript).json" defer></script>
+                <!--
+                TODO: investigate how to redirect output to an html element.
+                - So far, un-successful; e.g. use 'svg' element.
+                - For now, it renders output in a 'svg' tag, but OUT of 'main', still inside of 'body'. Check with developer tools (F12), in a regular web-browser.
+                -->
+                <!-- <svg id="pyscript_output"></svg> -->
             </section>
         </main>
         <footer class="footer">

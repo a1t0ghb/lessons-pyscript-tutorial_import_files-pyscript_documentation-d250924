@@ -136,9 +136,9 @@ ul {
         color: var(--colors_04);
     }
 
-    #pyscript_output_console_log_output {
+    /* #pyscript_output_console_log_output {
         max-width: 750px;
-    }
+    } */
 
     .footer {
         background-color: var(--colors_01);

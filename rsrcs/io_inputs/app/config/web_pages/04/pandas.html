@@ -6,16 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- Window title. -->
         <title>Pandas | PyScript Exercises</title>
-        <!-- Window logo. Goes up x4 folder levels to get to 'media' (rsrcs < io_inputs < app < config < web_pages), where it's stored. -->
-        <link rel="icon" type="image/png" href="./../../../../media/icon-favicon.png" />
+        <!-- Window logo. Goes up x5 folder levels to get to 'media' ([CURRENT DIR.] < web_pages < config < app < io_inputs < rsrcs > media), where it's stored. -->
+        <link rel="icon" type="image/png" href="./../../../../../media/icon-favicon.png" />
         <!--
         External CSS stylesheet: 'https://www.w3schools.com/html/html_css.asp', 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link'.
         - In this case, PyScript CSS.
         -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" />
         <!-- External (local) CSS stylesheet, with multiple external CSS links. ORDER MATTERS! 'https://www.programminghead.com/how-to-link-multiple-css-style-sheets-in-html'. -->
-        <link rel="stylesheet" href="./home-loading_splashscreen_(style).css">
-        <link rel="stylesheet" href="./home_(style).css">
+        <link rel="stylesheet" href="./../loading_splashscreen_(style).css">
+        <link rel="stylesheet" href="./../style.css">
         <!--
         Script call; e.g. this js script tag bootstraps PyScript.
         - NOTE: threated as deferred script. Ref. 'https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup/24070373#24070373'.
@@ -29,7 +29,7 @@
         - 'module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
         - 'module' vs. 'non-module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
         -->
-        <script type="module" src="./home-loading_splashscreen_(app).js"></script>
+        <script type="module" src="./../loading_splashscreen_(app).js"></script>
         <!-- Fallback call to PyScript script to trigger 'py:ready' event, in case there are no PyScript scripts in the page. -->
         <script type="py" defer></script>
     </head>
@@ -41,12 +41,12 @@
         <header class="header">
             <nav class="header-nav">
                 <div class="header-nav-left_aligned">
-                    <img class="header-nav-left_aligned-logo" src="./../../../../media/img-logo.png" />
+                    <img class="header-nav-left_aligned-logo" src="./../../../../../media/img-logo.png" />
                     <div class="header-nav-left_aligned-links_container">
-                        <a class="header-nav-left_aligned-links_container-link" href="./home.html">Home</a>
-                        <a class="header-nav-left_aligned-links_container-link" href="./hello_world.html">Hello World</a>
-                        <a class="header-nav-left_aligned-links_container-link" href="./antigravity.html">Antigravity</a>
-                        <a class="header-nav-left_aligned-links_container-link" href="./pandas.html"><b>PANDAS</b></a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./../01/home.html">Home</a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./../02/hello_world.html">Hello World</a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./../03/antigravity.html">Antigravity</a>
+                        <a class="header-nav-left_aligned-links_container-link" href="./../04/pandas.html"><b>PANDAS</b></a>
                     </div>
                 </div>
                 <div class="header-nav-links_container">
@@ -109,7 +109,7 @@
                     <div id="pyscript_output_console_log_output"></div>
                 </div>
                 <br>
-                <script type="py" src="./../imports/pandas_launcher.py" config="./../imports/pandas_launcher-pyscript.json" defer></script>
+                <script type="py" src="./../../imports/pandas_launcher.py" config="./../../imports/pandas_launcher_(pyscript).json" defer></script>
                 <!-- Previous script, generates HERE (empty): '<script-py id="py-2"></script-py>' -->
             </section>
         </main>
