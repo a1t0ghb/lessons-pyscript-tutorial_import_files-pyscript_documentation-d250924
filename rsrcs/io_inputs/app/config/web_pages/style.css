@@ -35,12 +35,12 @@ VARIABLES DECLARATION.
     --line_height_default: 1.5;
     --fonts_main: "Montserrat", var(--fonts_fallback);
     --fonts_minor: "Krona One", var(--fonts_fallback);
-    /* From midudev video for JSCamp in Twitch d251001. */
+    /* From midudev video for JSCamp in Twitch d251001. TODO: review proper color-palette with purple theme for personal branding. */
     --colors_primary : #1173D4;
     --colors_primary_dark: #0A3D66;
     --colors_primary_hover: #0D5BA8;
-    --colors_primary_light: #0099FF;
-    --colors_background_alternative: #101922;
+    --colors_primary_light: rgb(0, 153, 255);
+    --colors_background_00: #101922;
     --colors_fonts_primary: #FFFFFF;
     --colors_fonts_secondary: #CBD5E1;
     --colors_fonts_muted: #94A3B8;
@@ -152,9 +152,8 @@ footer p {
     article {
         background-color: var(--colors_card_background);
         padding: 1rem;
-        margin-bottom: 16px;
         border-radius: 1rem;
-        box-shadow: 2px 2px 3px 1px rgba(255, 255, 255, 0.5);
+        box-shadow: 2px 2px 3px 1px rgba(255, 255, 255, 0.5);       /* [horizontal: left(negative), right (positive)] [vertical: top(negative), bottom (positive)] [blur] [shadow_extension] [shadow_color] */
     }
 
     .main-content-tiles-logo_title_pair {
@@ -166,16 +165,17 @@ footer p {
 
     article svg {
         color: var(--colors_primary_light);
-        background-color: rgba(0, 153, 255, 0.3);
+        background-color: rgba(0, 153, 255, 0.3);     /* Same color as '--colors_primary_light', but with transparency. */
         width: 48px;
         height: 48px;
-        border-radius: 100%;                        /* Creates a circle. */
-        padding: 8px;
+        border-radius: 100%;                            /* Creates a circle. */
+        padding: 8px;                                   /* Inner padding; the greater the padding, the smaller the icon. */
     }
 
     .main-content-tiles {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        display: grid;                                  /* Column layout, instead of using Flexbox. */
+        /* Alternative to using media queries, for adjusting layout based on dimensions. */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));    /* DYNAMIC columns creation, by 'repeating' 'default' configuration (i.e. '1fr'), if conditions are met: MINIMUM 280px avaiable to create ANOTHER column; ie. to repeat 'default' configuration. */
         gap: 1rem;
     }
 
