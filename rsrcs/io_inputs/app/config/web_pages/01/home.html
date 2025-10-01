@@ -29,9 +29,9 @@
         - 'module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
         - 'module' vs. 'non-module' scripts: 'https://neerajdana.medium.com/understanding-type-module-in-javascript-a-comprehensive-guide-ebb13926da7a'.
         -->
-        <script type="module" src="./../loading_splashscreen_(app).js"></script>
+        <!-- <script type="module" src="./../loading_splashscreen_(app).js"></script> -->
         <!-- Fallback call to PyScript script to trigger 'py:ready' event, in case there are no PyScript scripts in the page. -->
-        <script type="py" defer></script>
+        <!-- <script type="py" defer></script> -->
     </head>
     <body>
         <!-- Main dialog (as 'modal', defined in js module '_app-loading_splashscreen.js'), what appears 1st as soon as web page is loaded. -->
@@ -64,11 +64,29 @@
                 <br>
                 <p>This is a list of exercises to study <code>PyScript</code>. These exercises come from the <b><a href="https://docs.pyscript.net/2024.5.2/examples/" target="_blank">official PyScript documentation</a></b>, where several examples are listed, starting with basics such as '<a href="https://pyscript.com/@examples/hello-world/latest" target="_blank">Hello World</a>', and digging into <a href="https://pyscript.com/@examples/altair/latest" target="_blank">plotting data</a>.</p>
                 <br>
-                <ul>
-                    <li><a class="main-content-list_link" href="./../02/hello_world.html">Hello World</a>: start learing how to use <code>PyScript</code> to run <code>Python</code> in a browser.</li>
-                    <li><a class="main-content-list_link" href="./../03/antigravity.html">Antigravity</a>: import files, using <code>PyScript</code> <a href="https://docs.pyscript.net/2024.5.2/user-guide/configuration/#files" target="_blank"> configuration file (TOML or JSON)</a>.</li>
-                    <li><a class="main-content-list_link" href="./../04/pandas.html">Pandas</a>: load a <code>.csv</code> table, from a URL, using <code>Pandas</code>.</li>
-                </ul>
+                <div class="main-content-tiles">
+                    <article>
+                        <div class="main-content-tiles-logo_title_pair">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M10 13l-1 2l1 2" /><path d="M14 13l1 2l-1 2" /></svg>
+                            <a class="main-content-tiles-logo_title_pair-title" href="./../02/hello_world.html"><h2>Hello World</h2></a>
+                        </div>
+                        <p>Start learning how to use <code>PyScript</code> to run <code>Python</code> in a browser.</p>
+                    </article>
+                    <article>
+                        <div class="main-content-tiles-logo_title_pair">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M10 13l-1 2l1 2" /><path d="M14 13l1 2l-1 2" /></svg>
+                            <a class="main-content-tiles-logo_title_pair-title" href="./../03/antigravity.html"><h2>Antigravity</h2></a>
+                        </div>
+                        <p>Import files, using <code>PyScript</code> <a href="https://docs.pyscript.net/2024.5.2/user-guide/configuration/#files" target="_blank"> configuration file (TOML or JSON)</a>.</p>
+                    </article>
+                    <article>
+                        <div class="main-content-tiles-logo_title_pair">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M10 13l-1 2l1 2" /><path d="M14 13l1 2l-1 2" /></svg>
+                            <a class="main-content-tiles-logo_title_pair-title" href="./../04/pandas.html"><h2>Pandas</h2></a>
+                        </div>
+                        <p>Load a <code>.csv</code> table, from a URL, using <code>Pandas</code>.</p>
+                    </article>
+                </div>
             </section>
         </main>
         <footer class="footer">

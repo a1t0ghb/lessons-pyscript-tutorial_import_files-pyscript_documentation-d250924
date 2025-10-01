@@ -35,6 +35,20 @@ VARIABLES DECLARATION.
     --line_height_default: 1.5;
     --fonts_main: "Montserrat", var(--fonts_fallback);
     --fonts_minor: "Krona One", var(--fonts_fallback);
+    /* From midudev video for JSCamp in Twitch d251001. */
+    --colors_primary : #1173D4;
+    --colors_primary_dark: #0A3D66;
+    --colors_primary_hover: #0D5BA8;
+    --colors_primary_light: #0099FF;
+    --colors_background_alternative: #101922;
+    --colors_fonts_primary: #FFFFFF;
+    --colors_fonts_secondary: #CBD5E1;
+    --colors_fonts_muted: #94A3B8;
+    --colors_border: rgba(255, 255, 255, 0.1);
+    --colors_card_background: #1E293B;
+    --colors_shadow: rgba(0, 0, 0, 0.3);
+    --colors_input_background: #1E293B;
+    --colors_hsla_example: hsla(210, 100%, 56%, 1);
 }
 
 /* Universal changes for all tags / elements / classes */
@@ -69,6 +83,14 @@ main {
 
 ul {
     padding: 10px 0px 0px 20px !important;              /* IMPORTANT: lists REQUIRE PADDING; therefore, need manual adjustment, if padding set GLOBALLY to 0; i.e. '* { padding: 0; }'. Ref.: 'https://stackoverflow.com/questions/72279264/unordered-list-not-showing-bullets/72281511#72281511', 'https://www.w3schools.com/css/css_important.asp'.*/
+}
+
+p {
+    color: var(--colors_fonts_muted);
+}
+
+footer p {
+    color: var(--colors_03);
 }
 
 /* Use of 'media queries' to define layouts according to specific screen resolutions: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries#targeting_media_features'. */
@@ -127,7 +149,37 @@ ul {
         margin: 0.5rem;
     }
 
-    .main-content-list_link {
+    article {
+        background-color: var(--colors_card_background);
+        padding: 1rem;
+        margin-bottom: 16px;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 3px 1px rgba(255, 255, 255, 0.5);
+    }
+
+    .main-content-tiles-logo_title_pair {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    article svg {
+        color: var(--colors_primary_light);
+        background-color: rgba(0, 153, 255, 0.3);
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;                        /* Creates a circle. */
+        padding: 8px;
+    }
+
+    .main-content-tiles {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+    }
+
+    .main-content-tiles-logo_title_pair-title {
         color: var(--colors_01);
         text-decoration-line: none;
     }
