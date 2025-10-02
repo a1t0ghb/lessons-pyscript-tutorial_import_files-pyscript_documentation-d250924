@@ -27,7 +27,7 @@ VARIABLES DECLARATION.
     --font_size_default: 16px;                          /* Default web-browsers font-size: 'https://stackoverflow.com/questions/29511983/is-the-default-font-size-of-every-browser-16px-why/29512572#29512572'. */
     --colors_background: #0D1117;
     --colors_01: #F0AB3C;
-    --colors_02: #F6F6F6;
+    --colors_02: rgb(246, 246, 246);
     --colors_03: #000000;
     --colors_04: #22D4FD;
     --colors_05: #272727;
@@ -93,6 +93,10 @@ footer p {
     color: var(--colors_03);
 }
 
+a {
+    text-decoration-line: none;                         /* To eliminate underscore format of hyperlinks. */
+}
+
 /* Use of 'media queries' to define layouts according to specific screen resolutions: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries#targeting_media_features'. */
 @media (width > 0px) {                                  /* Base design, as starting point: e.g. for desktop, although recommended to start with mobile, 1st: 'https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile/20350990#20350990'. */
 
@@ -131,7 +135,6 @@ footer p {
 
     .header-nav-left_aligned-links_container-link {
         color: var(--colors_01);
-        text-decoration-line: none;                     /* To eliminate underscore format of hyperlinks. */
         font-size: 1.3em;
     }
 
@@ -142,7 +145,7 @@ footer p {
     }
 
     .header-nav-links_container-link {
-        text-decoration-line: none;
+        color: var(--colors_fonts_muted);
     }
 
     .main-content {
@@ -181,7 +184,6 @@ footer p {
 
     .main-content-tiles-logo_title_pair-title {
         color: var(--colors_01);
-        text-decoration-line: none;
     }
 
     .main-content-pyscript_output_text {
@@ -192,10 +194,43 @@ footer p {
         max-width: 750px;
     } */
 
+    /* FOOTER: credits. */
+
     .footer {
         background-color: var(--colors_01);
-        color: var(--colors_background);
-        text-align: center;
         padding: 12px;
+        display: flex;
+        gap: 16px;                                      /* Separates sections: copyright and credits. */
+        justify-content: space-between;                 /* Distribute sections of copyrigth and credits, both to the opposites: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-justify-content'. */
+        align-items: center;
+        flex-wrap: wrap;                                /* When shrinking, wrap onto multiple lines; e.g. column stack, instead of staying on 1 line: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flex-wrap'. */
+        color: var(--colors_background);
     }
+
+    .footer-container_credits {
+        display: flex;
+        gap: 16px;                                      /* Separates credits items: developed by, github and email. */
+        align-items: center;
+        flex-wrap: wrap;                                /* When shrinking, wrap onto multiple lines; e.g. column stack, instead of staying on 1 line: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flex-wrap'. */
+    }
+
+    .footer-container_credits-container_credits {
+        display: flex;
+        align-items: center;
+        gap: 8px;                                      /* Separates logo from text. */
+    }
+
+    footer div div svg {
+        background-color: rgba(246, 246, 246, 0.2);  /* Same color as '--colors_02', but with transparency. */
+        border-radius: 100%;
+        width: 32px;
+        height: 32px;
+        padding: 4px;                                  /* Inner padding; the greater the padding, the smaller the icon. */
+    }
+
+    footer div div a {
+        color: var(--colors_background);
+    }
+
 }
+/* EOF. */
